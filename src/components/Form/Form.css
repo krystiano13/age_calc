@@ -1,0 +1,49 @@
+.formSection {
+    width : 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formSection .form {
+    display: flex;
+}
+
+.form .formInput label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--Smokey-grey);
+    letter-spacing: .25rem;
+}
+
+.form .formInput {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
+}
+
+.form .formInput input {
+    margin: 0;
+    appearance: textfield;
+    margin-top : 1rem;
+    box-sizing: border-box;
+    padding : 1.5rem;
+    padding-left : 1rem;
+    padding-right: 0rem;
+    width : 10rem;
+    height: 4rem;
+    font-size : 1.75rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    border-radius: .5rem;
+    border: solid var(--Light-grey) 1px;
+}
+
+.formInput input::placeholder {
+    color: var(--Smokey-grey);
+    opacity: 0.7;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+}
