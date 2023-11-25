@@ -1,3 +1,13 @@
+:root {
+	--Purple: #854dff;
+	--Light-red: #ff5757;
+	--White: #fff;
+	--Off-white: #f0f0f0;
+	--Light-grey: #dbdbdb;
+	--Smokey-grey: #716f6f;
+	--Off-black: #141414;
+}
+
 *,*::before,*::after {
 	margin : 0;
 	padding : 0;
@@ -11,14 +21,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: var(--Light-grey);
 }
 
-:root {
-	--Purple: #854dff;
-	--Light-red: #ff5757;
-	--White: #fff;
-	--Off-white: #f0f0f0;
-	--Light-grey: #dbdbdb;
-	--Smokey-grey: #716f6f;
-	--Off-black: #141414;
-}

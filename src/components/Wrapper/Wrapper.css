@@ -1,0 +1,9 @@
+main {
+    width : 50rem;
+    height : 38rem;
+    background-color: var(--White);
+    border-radius: 1rem;
+    border-bottom-right-radius: 6rem;
+    display: flex;
+    flex-direction: column;
+}

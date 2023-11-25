@@ -1,11 +1,11 @@
 import { render } from 'preact';
 import './style.css';
 
+import { Wrapper } from "./components/Wrapper/Wrapper";
+
 export function App() {
 	return (
-		<div>
-
-		</div>
+		<Wrapper></Wrapper>
 	);
 }
 
