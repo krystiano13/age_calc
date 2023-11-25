@@ -4,6 +4,35 @@
     flex-direction: column;
 }
 
+.formSection .separator {
+    width : 100%;
+    display: flex;
+    align-items: center;
+    margin-top : 3rem;
+}
+
+.separator .line {
+    width : 85%;
+    height : 1px;
+    background-color: var(--Light-grey);
+}
+
+.separator .icon {
+    width : 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-color: var(--Purple);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .25rem;
+}
+
+.icon img {
+    width : 50%;
+    height: auto;
+}
+
 .formSection .form {
     display: flex;
 }

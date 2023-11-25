@@ -1,5 +1,6 @@
 import React from 'react';
 import './Form.css';
+import arrowIcon from '../../assets/images/icon-arrow.svg';
 
 const Form = () => {
     return (
@@ -7,18 +8,23 @@ const Form = () => {
             <form className="form">
                 <section className="formInput">
                     <label>DAY</label>
-                    <input type="number" placeholder="DD" />
+                    <input min={1} max={31} type="number" placeholder="DD" />
                 </section>
                 <section className="formInput">
                     <label>MONTH</label>
-                    <input type="number" placeholder="MM" />
+                    <input min={1} max={12} type="number" placeholder="MM" />
                 </section>
                 <section className="formInput">
                     <label>YEAR</label>
-                    <input type="number" placeholder="YYYY" />
+                    <input min={0} max={2023} type="number" placeholder="YYYY" />
                 </section>
             </form>
-            <div className="separator"></div>
+            <div className="separator">
+                <div className="line"></div>
+                <div className="icon">
+                    <img src={arrowIcon} alt="arrow icon" />
+                </div>
+            </div>
         </section>
     )
 }
