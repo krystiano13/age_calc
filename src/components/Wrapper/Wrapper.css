@@ -1,10 +1,11 @@
 main {
-    width : 50rem;
-    height : 38rem;
+    width : 52rem;
+    height : 42rem;
     background-color: var(--White);
     border-radius: 1rem;
-    border-bottom-right-radius: 6rem;
+    border-bottom-right-radius: 12rem;
     display: flex;
     flex-direction: column;
     padding : 5rem;
+    padding-bottom: 0rem;
 }

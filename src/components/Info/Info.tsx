@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Info.css';
 
 const Info = () => {
     const [days,setDays] = useState<number|"- -">("- -");
@@ -7,9 +8,9 @@ const Info = () => {
 
     return (
         <section className="Info">
-            <p className="element">{years} years</p>
-            <p className="element">{months} months</p>
-            <p className="element">{days} days</p>
+            <p className="element"><span>{years}</span> years</p>
+            <p className="element"><span>{months}</span> months</p>
+            <p className="element"><span>{days}</span> days</p>
         </section>
     )
 }
