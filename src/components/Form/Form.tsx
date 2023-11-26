@@ -9,6 +9,9 @@ interface Props {
 }
 
 const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
+
+    const [valid,setValid] = React.useState<boolean>(true);
+
     const dayInput = useRef<HTMLInputElement>(null);
     const monthInput = useRef<HTMLInputElement>(null);
     const yearInput = useRef<HTMLInputElement>(null);
@@ -20,9 +23,16 @@ const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
 
         const date:Date = new Date(`${year}-${month}-${day}`);
 
-        if(isNaN(date.getDate())) {
-            alert('Invalid Date');
+        if(
+            isNaN(date.getDate()) ||
+            date.getDate() !== Number(day)
+        ) {
+            setValid(false);
+            return;
         }
+
+        console.log(date.getDate());
+        setValid(true);
     }
 
     return (
@@ -30,15 +40,36 @@ const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
             <form className="form">
                 <section className="formInput">
                     <label>DAY</label>
-                    <input ref={dayInput} min={1} max={31} type="number" placeholder="DD" />
+                    <input
+                        className={valid ? "valid" : "invalid"}
+                        ref={dayInput}
+                        min={1}
+                        max={31}
+                        type="number"
+                        placeholder="DD"
+                    />
                 </section>
                 <section className="formInput">
                     <label>MONTH</label>
-                    <input ref={monthInput} min={1} max={12} type="number" placeholder="MM" />
+                    <input
+                        className={valid ? "valid" : "invalid"}
+                        ref={monthInput}
+                        min={1}
+                        max={12}
+                        type="number"
+                        placeholder="MM"
+                    />
                 </section>
                 <section className="formInput">
                     <label>YEAR</label>
-                    <input ref={yearInput} min={0} max={2023} type="number" placeholder="YYYY" />
+                    <input
+                        className={valid ? "valid" : "invalid"}
+                        ref={yearInput}
+                        min={0}
+                        max={2023}
+                        type="number"
+                        placeholder="YYYY"
+                    />
                 </section>
             </form>
             <div className="separator">
