@@ -41,13 +41,19 @@ const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
             Math.floor((new Date().getTime() - date.getTime()) / 1000 / 60 / 60 / 24 / 365.25);
         setYears(numYears);
 
-        const numMonths:number =
+        let numMonths:number =
             Math.floor((new Date().getTime() - date.getTime()) / 1000 / 60 / 60 / 24 / 30.45 - numYears * 12);
-        setMonths(numMonths);
 
         const daysDiff:number =
             Math.floor((new Date().getTime() - date.getTime()) - numYears * 365.25 * 24 * 60 * 60 * 1000);
-        const numDays = Math.floor(daysDiff / 1000 / 60 / 60 / 24 - numMonths * 30.45);
+        let numDays = Math.floor(daysDiff / 1000 / 60 / 60 / 24 - numMonths * 30.45);
+       while(numDays >= 32) {
+            if(numDays >= 32) {
+                numDays -= 30;
+                numMonths += 1;
+            }
+        }
+        setMonths(numMonths);
         setDays(numDays);
     }
 
