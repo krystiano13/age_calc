@@ -25,7 +25,10 @@ const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
 
         if(
             isNaN(date.getDate()) ||
-            date.getDate() !== Number(day)
+            date.getDate() !== Number(day) ||
+            Number(day) > 31 ||
+            Number(day) < 1 ||
+            (new Date().getTime() - date.getTime()) < 0
         ) {
             setValid(false);
             return;
