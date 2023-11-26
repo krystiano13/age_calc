@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Form.css';
 import arrowIcon from '../../assets/images/icon-arrow.svg';
 
@@ -9,25 +9,41 @@ interface Props {
 }
 
 const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
+    const dayInput = useRef<HTMLInputElement>(null);
+    const monthInput = useRef<HTMLInputElement>(null);
+    const yearInput = useRef<HTMLInputElement>(null);
+
+    const handleSubmit = () => {
+        const day:string = dayInput.current.value;
+        const month:string = monthInput.current.value;
+        const year:string = yearInput.current.value;
+
+        const date:Date = new Date(`${year}-${month}-${day}`);
+
+        if(isNaN(date.getDate())) {
+            alert('Invalid Date');
+        }
+    }
+
     return (
         <section className="formSection">
             <form className="form">
                 <section className="formInput">
                     <label>DAY</label>
-                    <input min={1} max={31} type="number" placeholder="DD" />
+                    <input ref={dayInput} min={1} max={31} type="number" placeholder="DD" />
                 </section>
                 <section className="formInput">
                     <label>MONTH</label>
-                    <input min={1} max={12} type="number" placeholder="MM" />
+                    <input ref={monthInput} min={1} max={12} type="number" placeholder="MM" />
                 </section>
                 <section className="formInput">
                     <label>YEAR</label>
-                    <input min={0} max={2023} type="number" placeholder="YYYY" />
+                    <input ref={yearInput} min={0} max={2023} type="number" placeholder="YYYY" />
                 </section>
             </form>
             <div className="separator">
                 <div className="line"></div>
-                <div className="icon">
+                <div className="icon" onClick={handleSubmit}>
                     <img src={arrowIcon} alt="arrow icon" />
                 </div>
             </div>
