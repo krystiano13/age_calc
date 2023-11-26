@@ -4,6 +4,14 @@
     font-weight: 800;
     font-style: italic;
     margin: 0;
+
+    @media screen and (max-width : 600px) and (orientation: portrait) {
+        font-size: 3.5rem;
+    }
+
+    @media screen and (min-width : 200px) and (max-width : 599px) and (orientation: portrait) {
+        font-size: 3rem;
+    }
 }
 
 .element span {

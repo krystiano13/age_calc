@@ -30,6 +30,16 @@
 
     transition: 250ms background-color;
     will-change: background-color;
+
+    @media screen and (max-width : 600px) and (orientation: portrait) {
+        width : 4rem;
+        height : 4rem;
+    }
+
+    @media screen and (max-width : 400px) and (orientation: portrait) {
+        width : 3.5rem;
+        height : 3.5rem;
+    }
 }
 
 .icon:hover {
@@ -73,6 +83,13 @@
     font-weight: 800;
     border-radius: .5rem;
     border: solid var(--Light-grey) 1px;
+
+    @media screen and (max-width : 600px) and (orientation: portrait) {
+        font-size : 1.1rem;
+        width : 100%;
+        padding : 1rem;
+        padding-left : .5rem;
+    }
 }
 
 .formInput input::placeholder {

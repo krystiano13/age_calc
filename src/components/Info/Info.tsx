@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import './Info.css';
 
-const Info = () => {
-    const [days,setDays] = useState<number|"- -">("- -");
-    const [months,setMonths] = useState<number|"- -">("- -");
-    const [years, setYears] = useState<number|"- -">("- -");
+interface Props {
+    days: number | "- -",
+    months: number | "- -",
+    years: number | "- -",
+}
 
+const Info: React.FC<Props> = ({ days, months, years }) => {
     return (
         <section className="Info">
             <p className="element"><span>{years}</span> years</p>
