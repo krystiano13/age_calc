@@ -34,8 +34,30 @@ const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
             return;
         }
 
-        console.log(date.getDate());
         setValid(true);
+
+        let numYears = new Date().getFullYear() - Number(year);
+        let numMonths = new Date().getMonth() + 1 - Number(month);
+        let numDays = new Date().getDate() - Number(day);
+
+        if(numDays > 0) {
+            numMonths--;
+            setDays(Number(day));
+        }
+        else {
+            setDays(Math.abs(numDays));
+        }
+
+        if(numMonths < 0) {
+            numYears--;
+        }
+
+        setYears(numYears);
+        setMonths(Math.abs(numMonths));
+
+        console.log(numYears);
+        console.log(numMonths);
+        console.log(numDays);
     }
 
     return (
