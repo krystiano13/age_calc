@@ -28,7 +28,8 @@ const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
             date.getDate() !== Number(day) ||
             Number(day) > 31 ||
             Number(day) < 1 ||
-            (new Date().getTime() - date.getTime()) < 0
+            (new Date().getTime() - date.getTime()) < 0 ||
+            Number(year) < 100
         ) {
             setValid(false);
             return;
