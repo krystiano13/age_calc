@@ -2,7 +2,13 @@ import React from 'react';
 import './Form.css';
 import arrowIcon from '../../assets/images/icon-arrow.svg';
 
-const Form = () => {
+interface Props {
+    setDays: (day:number) => void;
+    setMonths: (month:number) => void;
+    setYears: (year:number) => void;
+}
+
+const Form:React.FC<Props> = ({ setDays, setMonths, setYears }) => {
     return (
         <section className="formSection">
             <form className="form">

@@ -12,8 +12,16 @@ export function App() {
 	const [years, setYears] = useState<number|"- -">("- -");
 	return (
 		<Wrapper>
-			<Form />
-			<Info days={days} months={months} years={years} />
+			<Form
+				setDays={(day:number) => setDays(day)}
+				setMonths={(month:number) => setMonths(month)}
+				setYears={(year:number) => setYears(year)}
+			/>
+			<Info
+				days={days}
+				months={months}
+				years={years}
+			/>
 		</Wrapper>
 	);
 }
